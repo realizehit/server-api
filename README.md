@@ -6,17 +6,14 @@ realizehit API server
 
 #### NPM
 ```bash
-$ npm i -g realizehit-api-server
-$ DEBUG=* realizehit-api-server
-
-realizehit:WebSocketServer: listening on port 8080
-realizehit:RestServer: listening on port 3000
+npm i -g realizehit-api-server
+DEBUG=* realizehit-api-server
 ```
 
 #### Docker
 ```bash
-$ docker build -t realizehit/api-server .
-$ docker run -d -p 80:8080 81:3000 realizehit/api-server
+docker build -t realizehit/api-server .
+docker run -d -p 80:8080 81:3000 realizehit/api-server
 ```
 
 ## Environment Variables
