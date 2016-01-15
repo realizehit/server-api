@@ -1,0 +1,37 @@
+{
+  "name": "realizehit-server-api",
+  "version": "1.0.0",
+  "description": "realizehit api server",
+  "main": "lib/server.js",
+  "scripts": {
+    "test-jshint": "jshint .",
+    "test-mocha": "mocha --globals setImmediate,clearImmediate --check-leaks --colors -t 10000 --reporter spec $(find test/* -name '*.test.js')",
+    "test": "npm run test-jshint",
+    "build-docker": "docker build -t realizehit/server-api ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realizehit/server-api.git"
+  },
+  "keywords": [
+    "realizehit",
+    "api",
+    "server",
+    "redis"
+  ],
+  "author": "José Moreira <jose.moreira@findhit.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/realizehit/server-api/issues"
+  },
+  "homepage": "https://github.com/realizehit/server-api#readme",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "ioredis": "^1.14.0"
+  },
+  "devDependencies": {
+    "jshint": "^2.9.1",
+    "mocha": "^2.3.4"
+  }
+}
