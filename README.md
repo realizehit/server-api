@@ -2,7 +2,7 @@
 
 realizehit API server
 
-Probably you might want to use [realizehit/server](https://github.com/realizehit/server) instead.
+Probably you might want to use [realizehit/realizehit](https://github.com/realizehit/realizehit) instead.
 
 ## Installation
 
