@@ -30,13 +30,7 @@ Defaults to `0.0.0.0`
 #### `SERVER_API_PORT`
 Defaults to `8080`
 
-#### `ENDPOINT_HOST`
-Defaults to `localhost`
+#### `ENDPOINT_API`
+Defaults to `http://{{SERVER_HOST}}:{{SERVER_API_PORT}}`
 
-Here you should define the host of the public accessible endpoint, in our case
-its our load-balancer's hostname.
-
-#### `ENDPOINT_API_PORT`
-Defaults to `SERVER_API_PORT`
-
-Here you should define the configured port of the public accessible endpoint.
+Here you should define the URI of the public accessible endpoint.
