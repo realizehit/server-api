@@ -1,4 +1,4 @@
-FROM cusspvz/node:0.12.9
+FROM cusspvz/node:5.1.1
 MAINTAINER José Moreira <jose.moreira@findhit.com>
 
 ARG NODE_ENV=production

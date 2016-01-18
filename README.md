@@ -17,7 +17,7 @@ DEBUG=* realizehit-server-api
 
 ```bash
 docker build -t realizehit/server-api .
-docker run -d -p 80:8080 81:3000 realizehit/server-api
+docker run -d -p 8080:8080 realizehit/server-api
 ```
 
 ## Environment Variables

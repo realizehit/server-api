@@ -8,11 +8,12 @@
     "test-jshint": "jshint .",
     "test-mocha": "mocha --globals setImmediate,clearImmediate --check-leaks --colors -t 10000 --reporter spec $(find test/* -name '*.test.js')",
     "test": "for kind in jshint mocha; do npm run test-$kind; [ $? -ne 0 ] && exit 1; done; exit 0",
-    "preversion": "npm test",
-    "postversion": "git push origin master; git push origin --tags; npm publish",
+    "preversion": "docker ps > /dev/null && npm test",
+    "postversion": "git push origin master && git push origin --tags && npm publish && npm run build-docker && npm run publish-docker && npm run publish-docker-latest",
     "build-docker": "docker build -t realizehit/server-api:$npm_package_version .",
     "start-docker": "docker run -ti realizehit/server-api:$npm_package_version",
-    "publish-docker": "docker push realizehit/server-api:$npm_package_version"
+    "publish-docker": "docker push realizehit/server-api:$npm_package_version",
+    "publish-docker-latest": "docker tag -f realizehit/server-api:$npm_package_version realizehit/server-api:latest"
   },
   "repository": {
     "type": "git",
