@@ -7,7 +7,7 @@
     "start": "node server.js",
     "test-jshint": "jshint .",
     "test-mocha": "mocha --globals setImmediate,clearImmediate --check-leaks --colors -t 10000 --reporter spec $(find test/* -name '*.test.js')",
-    "test": "for kind in jshint mocha; do npm run test-$kind; [ $? -ne 0 ] && exit 1; done",
+    "test": "for kind in jshint mocha; do npm run test-$kind; [ $? -ne 0 ] && exit 1; done; exit 0",
     "preversion": "npm test",
     "postversion": "git push origin master; git push origin --tags; npm publish",
     "build-docker": "docker build -t realizehit/server-api ."
