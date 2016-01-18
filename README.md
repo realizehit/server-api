@@ -4,7 +4,7 @@ realizehit API server
 
 Probably you might want to use [realizehit/realizehit](https://github.com/realizehit/realizehit) instead.
 
-## Installation
+## Usage
 
 #### Run as NPM module
 
@@ -23,12 +23,23 @@ var server = new ApiServer({
 #### Run with Docker
 
 ```bash
-docker run -d -p 8080:8080 realizehit/server-api
+docker run -d --name=redis redis
+docker run -d \
+    --name=realizehit-server-api \
+    -p 8080:8080 \
+    -e REDIS_URI="redis://redis:6379" \
+    --link redis:redis \
+    realizehit/server-api
 ```
 
 ## Environment Variables
 
 So here is a list of appliable variables:
+
+#### `REDIS_URI`
+Defaults to `redis://localhost:6379`
+
+You should always specify a way to this communicate with redis.
 
 #### `SERVER_HOST`
 Defaults to `0.0.0.0`
