@@ -31,7 +31,11 @@ describe( "API Server", function () {
     after(function () {
 
         debug( "Destroying HTTP Server" )
-        this.httpServer.close()
+        // Change this to `http.listening` once node supports it
+        // nodejs/node#4735
+        if ( this.httpServer._handle ) {
+            this.httpServer.close()
+        }
 
         debug( "Destroying API Server" )
         this.server.destroy()
