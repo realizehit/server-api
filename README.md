@@ -6,17 +6,23 @@ Probably you might want to use [realizehit/realizehit](https://github.com/realiz
 
 ## Installation
 
-#### NPM
+#### Run as NPM module
 
 ```bash
 npm i -g realizehit-server-api
-DEBUG=* realizehit-server-api
 ```
 
-#### Docker
+```javascript
+var ApiServer = require( 'realizehit-server-api' )
+
+var server = new ApiServer({
+    httpPort: '8080'
+})
+```
+
+#### Run with Docker
 
 ```bash
-docker build -t realizehit/server-api .
 docker run -d -p 8080:8080 realizehit/server-api
 ```
 
@@ -34,3 +40,19 @@ Defaults to `8080`
 Defaults to `http://{{SERVER_HOST}}:{{SERVER_API_PORT}}`
 
 Here you should define the URI of the public accessible endpoint.
+
+## Contributing
+
+### Running with node
+
+```bash
+npm install
+npm start
+```
+
+### Running with docker
+
+```bash
+docker build -t realizehit/server-api:dev .
+docker run -d -p 8080:8080 realizehit/server-api:dev
+```
