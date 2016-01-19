@@ -1,5 +1,5 @@
 var http = require( 'http' )
-var ApiServer = require( '..' )
+var APIServer = require( '..' )
 var Promise = require( 'bluebird' )
 var Redis = require( 'ioredis' )
 var Subscription = require( 'realizehit-subscription' )
@@ -10,7 +10,7 @@ var expect = Chai.expect
 
 var debug = require( 'debug' )( 'realizehit:api:test:server' )
 
-describe( "API Server", function () {
+describe( "APIServer", function () {
 
     before(function () {
 
@@ -18,7 +18,7 @@ describe( "API Server", function () {
         this.httpServer = http.createServer()
 
         debug( "Binding API Server to recently created http server")
-        this.server = new ApiServer({ httpServer: this.httpServer })
+        this.server = new APIServer({ httpServer: this.httpServer })
 
         debug( "Connecting to local redis server" )
         this.redis = new Redis()

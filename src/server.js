@@ -17,7 +17,7 @@ var defaultOptions = {
     redis: 'redis://localhost:6379',
 }
 
-function Server ( options ) {
+function APIServer ( options ) {
     options = typeof options === 'object' && options || {}
     options = assign( {}, defaultOptions, options )
 
@@ -37,12 +37,12 @@ function Server ( options ) {
     return this
 }
 
-module.exports = Server
+module.exports = APIServer
 
-Server.prototype = Object.create( EventEmitter.prototype )
+APIServer.prototype = Object.create( EventEmitter.prototype )
 
 // Should handle send
-Server.prototype.buildRoutes = function APIServer$buildRoutes () {
+APIServer.prototype.buildRoutes = function APIServer$buildRoutes () {
     var server = this
 
     debug( "building routes" )
@@ -96,9 +96,9 @@ Server.prototype.buildRoutes = function APIServer$buildRoutes () {
     )
 }
 
-Server.prototype.destroy =
-Server.prototype.close =
-Server.prototype.terminate =
+APIServer.prototype.destroy =
+APIServer.prototype.close =
+APIServer.prototype.terminate =
     function APIServer$destroy () {
 
         // Change this to `http.listening` once node supports it
