@@ -1,4 +1,4 @@
-# realizehit-server-api
+# realizehit-server-api [![Build Status](https://travis-ci.org/realizehit/server-api.svg?branch=master)](https://travis-ci.org/realizehit/server-api)
 
 realizehit API server
 
