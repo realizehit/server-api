@@ -47,7 +47,7 @@ APIServer.prototype.buildRoutes = function APIServer$buildRoutes () {
 
     debug( "building routes" )
 
-    this.router.post( '/',
+    this.router.post( this.options.httpPrefix,
         bodyParser.json(),
         function ( req, res, next ) {
 
