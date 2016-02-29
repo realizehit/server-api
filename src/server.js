@@ -18,8 +18,10 @@ var defaultOptions = {
 }
 
 function APIServer ( options ) {
-    options = typeof options === 'object' && options || {}
-    options = assign( {}, defaultOptions, options )
+    options = this.options = assign( {}, defaultOptions,
+        typeof options === 'object' && options ||
+        {}
+    )
 
     // Setup HTTP server
     this.http =
@@ -33,8 +35,6 @@ function APIServer ( options ) {
 
     // Setup Redis pub client
     this.redis = new Redis( options.redis )
-
-    return this
 }
 
 module.exports = APIServer

@@ -47,6 +47,9 @@ Defaults to `0.0.0.0`
 #### `SERVER_API_PORT`
 Defaults to `8080`
 
+#### `SERVER_API_PREFIX`
+Defaults to `/`
+
 #### `ENDPOINT_API`
 Defaults to `http://{{SERVER_HOST}}:{{SERVER_API_PORT}}`
 
